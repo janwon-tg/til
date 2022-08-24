@@ -3,14 +3,24 @@ package main
 import (
 	"context"
 	"log"
+	"os"
 
 	firebase "firebase.google.com/go"
+	"github.com/joho/godotenv"
 	"google.golang.org/api/option"
 )
 
 func main() {
 	ctx := context.Background()
-	sa := option.WithCredentialsFile("/path/to/credentials_file")
+
+	err := godotenv.Load(".env")
+	if err != nil {
+		log.Fatalln("Failed read .env")
+	}
+
+	p := os.Getenv("CREDENTIALS_FILE")
+	log.Print(p)
+	sa := option.WithCredentialsFile(p)
 	log.Print("NewApp")
 	app, err := firebase.NewApp(ctx, nil, sa)
 	if err != nil {
@@ -27,7 +37,7 @@ func main() {
 	_, _, err = client.Collection("samples2").Add(ctx, map[string]interface{}{
 		"first": "Ada",
 		"last":  "Lovelace",
-		"born":  1815,
+		"born":  1816,
 	})
 
 	if err != nil {
