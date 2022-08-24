@@ -39,6 +39,15 @@ func main() {
 		"last":  "Lovelace",
 		"born":  1816,
 	})
+	if err != nil {
+		log.Fatalf("Failed adding alovelace :%v", err)
+	}
+
+	_, _, err = client.Collection("samples2").Add(ctx, map[string]interface{}{
+		"first":  "Tom",
+		"second": "たろう",
+		"born":   2016,
+	})
 
 	if err != nil {
 		log.Fatalf("Failed adding alovelace :%v", err)
