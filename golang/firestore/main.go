@@ -32,8 +32,20 @@ func main() {
 		log.Fatalln("Failed new Firestore: %v", err)
 	}
 
+	addDocWithID(ctx, client)
+	addDocWithoutID(ctx, client)
+
 	log.Print("Call Store")
 	store(ctx, client)
+
+	log.Print("Call getCollections")
+	getCollections(ctx, client)
+
+	log.Print("Call getAllDocs")
+	getAllDocs(ctx, client)
+
+	log.Print("Call search")
+	search(ctx, client)
 
 	log.Print("Close")
 	defer client.Close()

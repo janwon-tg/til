@@ -20,3 +20,22 @@ func store(ctx context.Context, client *firestore.Client) {
 	}
 
 }
+
+func addDocWithID(ctx context.Context, client *firestore.Client) {
+	var data = make(map[string]interface{})
+
+	_, err := client.Collection("cities").Doc("new-city-id").Set(ctx, data)
+	if err != nil {
+		log.Printf("An error has occured: %s", err)
+	}
+}
+
+func addDocWithoutID(ctx context.Context, client *firestore.Client) {
+	_, _, err := client.Collection("cities").Add(ctx, map[string]interface{}{
+		"name":    "Tokyo",
+		"country": "Japan",
+	})
+	if err != nil {
+		log.Printf("An error has occured: %s", err)
+	}
+}
