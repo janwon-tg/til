@@ -3,56 +3,20 @@ package main
 import (
 	"context"
 	"log"
-	"os"
 
-	firebase "firebase.google.com/go"
-	"github.com/joho/godotenv"
-	"google.golang.org/api/option"
+	"cloud.google.com/go/firestore"
 )
 
-func main() {
-	ctx := context.Background()
-
-	err := godotenv.Load(".env")
-	if err != nil {
-		log.Fatalln("Failed read .env")
-	}
-
-	p := os.Getenv("CREDENTIALS_FILE")
-	log.Print(p)
-	sa := option.WithCredentialsFile(p)
-	log.Print("NewApp")
-	app, err := firebase.NewApp(ctx, nil, sa)
-	if err != nil {
-		log.Fatalln(err)
-	}
-
-	log.Print("Firestore")
-	client, err := app.Firestore(ctx)
-	if err != nil {
-		log.Fatalln(err)
-	}
-
+func store(ctx context.Context, client *firestore.Client) {
 	// add collection
-	_, _, err = client.Collection("samples2").Add(ctx, map[string]interface{}{
-		"first": "Ada",
-		"last":  "Lovelace",
-		"born":  1816,
-	})
-	if err != nil {
-		log.Fatalf("Failed adding alovelace :%v", err)
-	}
-
-	_, _, err = client.Collection("samples2").Add(ctx, map[string]interface{}{
+	_, _, err := client.Collection("samples2").Add(ctx, map[string]interface{}{
 		"first":  "Tom",
-		"second": "たろう",
-		"born":   2016,
+		"second": "じろう",
+		"born":   2017,
 	})
 
 	if err != nil {
 		log.Fatalf("Failed adding alovelace :%v", err)
 	}
 
-	log.Print("Close")
-	defer client.Close()
 }
