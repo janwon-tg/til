@@ -8,6 +8,7 @@ import (
 	"cloud.google.com/go/firestore"
 )
 
+// add collection doc
 func store(ctx context.Context, client *firestore.Client) {
 	// add collection
 	_, _, err := client.Collection("samples2").Add(ctx, map[string]interface{}{
