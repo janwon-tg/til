@@ -1,0 +1,17 @@
+# Terraform
+
+## 導入
+$ brew install tfenv
+$ tfenv install latest
+$ tfenv use latest
+
+## 毎日1form
+
+### 1日目
+- セットアップ
+-- 導入を参照
+- local_file
+-- ref: https://zenn.dev/sway/articles/terraform_biginner_helloworld
+
+### 2日目
+TODO : https://learn.hashicorp.com/tutorials/terraform/google-cloud-platform-build?in=terraform/gcp-get-started
