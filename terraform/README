@@ -13,5 +13,11 @@ $ tfenv use latest
 - local_file
 -- ref: https://zenn.dev/sway/articles/terraform_biginner_helloworld
 
+```
+$ terraform init
+$ terraform plan
+$ terraform apply
+```
+
 ### 2日目
 TODO : https://learn.hashicorp.com/tutorials/terraform/google-cloud-platform-build?in=terraform/gcp-get-started
