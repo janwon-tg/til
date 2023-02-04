@@ -2,13 +2,13 @@ const message: string = "Hello, world!";
 const message2: string = "Hello, world2!";
 
 type Human = {
-	height: number;
-	weight: number;
-}
+  height: number;
+  weight: number;
+};
 
 interface Human2 {
-	height: number;
-	weight: number;
+  height: number;
+  weight: number;
 }
 
 console.log(message);
@@ -39,21 +39,35 @@ function range(min: number, max: number): number[] {
 //const calcBMI3 = function({ h, w }: Human): number {
 //	return weight / height ** 2;
 //};
-const calcBMI = function({ height, weight }: Human): number {
-	return weight / height ** 2;
+const calcBMI = function ({ height, weight }: Human): number {
+  return weight / height ** 2;
 };
 
-const calcBMI2 = function(h: Human): number {
-	return h.weight / h.height ** 2;
+const calcBMI2 = function (h: Human): number {
+  return h.weight / h.height ** 2;
 };
 
-const taro: Human = { height:1.8, weight:80 };
-const jiro: Human2 = { height:1.3, weight:36 };
+const calcBMI4 = ({ height, weight }: Human): number => {
+  return weight / height ** 2;
+};
+
+const calcBMI5 = ({ height, weight }: Human): number => weight / height ** 2;
+
+const taro: Human = { height: 1.8, weight: 80 };
+const jiro: Human2 = { height: 1.3, weight: 36 };
 
 calcBMI(taro);
 calcBMI(jiro);
-calcBMI({height:1.7, weight:77});
+calcBMI({ height: 1.7, weight: 77 });
 
 calcBMI2(taro);
 calcBMI2(jiro);
-calcBMI2({height:1.7, weight:77});
+calcBMI2({ height: 1.7, weight: 77 });
+
+calcBMI4(taro);
+calcBMI4(jiro);
+calcBMI4({ height: 1.7, weight: 77 });
+
+calcBMI5(taro);
+calcBMI5(jiro);
+calcBMI5({ height: 1.7, weight: 77 });
