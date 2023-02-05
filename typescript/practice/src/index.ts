@@ -1,5 +1,5 @@
 const message: string = "Hello, world!";
-const message2: string = 'Hello, world2!';
+const message2: string = "Hello, world2!";
 
 type Human = {
   height: number;
