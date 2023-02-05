@@ -1,5 +1,5 @@
-const message: string = "Hello, world!";
-const message2: string = "Hello, world2!";
+const message: string = 'Hello, world!';
+const message2: string = 'Hello, world2!';
 
 type Human = {
   height: number;
@@ -56,18 +56,18 @@ const calcBMI5 = ({ height, weight }: Human): number => weight / height ** 2;
 const taro: Human = { height: 1.8, weight: 80 };
 const jiro: Human2 = { height: 1.3, weight: 36 };
 
-calcBMI(taro);
-calcBMI(jiro);
-calcBMI({ height: 1.7, weight: 77 });
+console.log(calcBMI(taro));
+console.log(calcBMI(jiro));
+console.log(calcBMI({ height: 1.7, weight: 77 }));
 
-calcBMI2(taro);
-calcBMI2(jiro);
-calcBMI2({ height: 1.7, weight: 77 });
+console.log(calcBMI2(taro));
+console.log(calcBMI2(jiro));
+console.log(calcBMI2({ height: 1.7, weight: 77 }));
 
-calcBMI4(taro);
-calcBMI4(jiro);
-calcBMI4({ height: 1.7, weight: 77 });
+console.log(calcBMI4(taro));
+console.log(calcBMI4(jiro));
+console.log(calcBMI4({ height: 1.7, weight: 77 }));
 
-calcBMI5(taro);
-calcBMI5(jiro);
-calcBMI5({ height: 1.7, weight: 77 });
+console.log(calcBMI5(taro));
+console.log(calcBMI5(jiro));
+console.log(calcBMI5({ height: 1.7, weight: 77 }));
