@@ -11,7 +11,8 @@
     "prettier:write": "npm run prettier:base -- --write \"src/**/*.{ts,tsx}\"",
     "run": "node dist/index.js",
     "build": "tsc",
-    "build:watch": "tsc --watch"
+    "build:watch": "tsc --watch",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
@@ -20,7 +21,7 @@
     "typescript": "^4.9.5"
   },
   "devDependencies": {
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "prettier": "^2.8.3"
   }
 }

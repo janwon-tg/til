@@ -1,5 +1,5 @@
-const message: string = "Hello, world!";
-const message2: string = "Hello, world2!";
+const message: string = 'Hello, world!';
+const message2: string = 'Hello, world2!';
 
 type Human = {
   height: number;
@@ -12,15 +12,16 @@ interface Human2 {
 }
 
 console.log(message);
-console.log("Hello");
-console.log("Hello");
+console.log('Hello');
+console.log('Hello');
+console.log('Hello');
 console.log(message2);
 console.log(range(5, 10.0));
 helloNtimes(5);
 
 function helloNtimes(n: number): void {
   for (let i = 0; i < n; i++) {
-    console.log("Hello World!!");
+    console.log('Hello World!!');
   }
 }
 
