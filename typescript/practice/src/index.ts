@@ -12,6 +12,7 @@ interface Human2 {
 }
 
 console.log(message);
+console.log("Hello");
 console.log(message2);
 console.log(range(5, 10.0));
 helloNtimes(5);
