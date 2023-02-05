@@ -1,4 +1,4 @@
-const message: string = 'Hello, world!';
+const message: string = "Hello, world!";
 const message2: string = 'Hello, world2!';
 
 type Human = {
