@@ -16,6 +16,11 @@
   },
   "author": "",
   "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier:write"
+    }
+  },
   "dependencies": {
     "@types/node": "^18.11.18",
     "typescript": "^4.9.5"
